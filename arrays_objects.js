@@ -24,7 +24,8 @@ alumne = {
   nom: "Ella",
   cognom: "Petryshak",
   edat: 33,
-  hobbie: "programacion"
+  hobbie: "programacion",
+  animals: [koala, animals[1]]
 }
 
 console.log(alumne)
@@ -43,3 +44,14 @@ console.log(profe);
 
 /*profe = "Omar";
 profe = "Arnau";*/
+
+alumnes = [
+  alumne,
+  {
+    nom: "Joan",
+    cognom: "Perez",
+    edat: 18,
+  }
+]
+
+ console.log(alumnes);
