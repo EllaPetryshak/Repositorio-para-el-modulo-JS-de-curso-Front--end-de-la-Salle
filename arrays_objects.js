@@ -58,9 +58,66 @@ alumnes = [
 
  //------------------------------------------------------------------------------------------------
 
- //TODO: crear un array con 5 objetos dentro que tengan las mismas 4 propiedades
- //TODO: crear un array que contenga una lista de una de las propiedades de los objetos
- //TODO: crear una variable que contenga la suma de una propiedad (que sea numerica)
+ //TODO: cread un array con 5 objetos dentro que tengan las mismas 4 propiedades
+  cotxes = [
+  {
+      marca: "Toyota",
+      model: "Corolla",
+      any: 2007,
+      color: "vermell"
+  },
+  {
+      marca: "Ford",
+      model: "Focus",
+      any: 2008,
+      color: 'blau'
+  },
+  {
+      marca: "Honda",
+      model: "Civic",
+      any: 2019,
+      color: "negre"
+  },
+  {
+      marca: "Opel",
+      model: "Astra",
+      any: 2012,
+      color: "blanc"
+  },
+  {
+      marca: 'Nissan',
+      model: "Note",
+      any: 2013,
+      color: "gris"
+  }
+];
+
+console.log(cotxes);
+
+ //TODO: cread un array que contenga una lista de una de las propiedades de los objetos
+
+ let llistaDeMarcas = [];
+for (let i = 0; i < cotxes.length; i++) {
+  llistaDeMarcas.push(cotxes[i].marca);
+}
+ console.log(llistaDeMarcas);
+
+ //TODO: cread una variable que contenga la suma de una propiedad (que sea numerica)
+ let sumaAnys = 0;
+ for (let i = 0; i < cotxes.length; i++) {
+   sumaAnys += cotxes[i].any;
+ }
+ console.log(sumaAnys)
+
  //TODO: monstrar por consola todo lo anterior
+
  //TODO: monstrar por consola  una frase que resuma las propiedades de cada objeto
- //TODO: buscar una manera de mostrar todos los objetos por consola en forma de tabla
+ for (let i = 0; i < cotxes.length; i++) {
+  const coche = cotxes[i];
+  console.log(`El Coche ${i + 1}: Marca ${coche.marca} el model ${coche.model} del any ${coche.any} de color ${coche.color}`);
+}
+
+ //TODO: buscad una manera de mostrar todos los objetos por consola en forma de tabla
+ console.table(cotxes);
+
+  
