@@ -19,4 +19,21 @@ console.log(userName + userAge);
 console.log(userName + userExperience);
 
 console.log ("Edad: " + userAge, "anos de experiencia");
-//objects
+//ESPACIO = " "
+
+a = 1;
+b = 2;
+
+c = a;
+a = b;
+b = c;
+
+//TODO: afegiu el codi
+
+console.log(a, b) //2, 1
+ [a, b] = [b, a]
+ console.log(a, b); //1, 2
+
+
+//TODO: arrays, objects
+
