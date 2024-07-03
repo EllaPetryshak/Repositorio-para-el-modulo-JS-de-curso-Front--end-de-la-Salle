@@ -55,3 +55,12 @@ alumnes = [
 ]
 
  console.log(alumnes);
+
+ //------------------------------------------------------------------------------------------------
+
+ //TODO: crear un array con 5 objetos dentro que tengan las mismas 4 propiedades
+ //TODO: crear un array que contenga una lista de una de las propiedades de los objetos
+ //TODO: crear una variable que contenga la suma de una propiedad (que sea numerica)
+ //TODO: monstrar por consola todo lo anterior
+ //TODO: monstrar por consola  una frase que resuma las propiedades de cada objeto
+ //TODO: buscar una manera de mostrar todos los objetos por consola en forma de tabla
