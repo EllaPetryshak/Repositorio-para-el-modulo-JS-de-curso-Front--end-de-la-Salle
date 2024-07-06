@@ -37,3 +37,14 @@ console.log(a, b) //2, 1
 
 //TODO: arrays, objects
 
+const PI = "3.1415"
+radi = 4
+console.log("L'area del cercle es:" + PI*radi**2);
+
+cercle = {
+  /*radi: "4 metros",*/
+  area: PI*radi**2 + "metros cuadrados"
+}
+console.log(cercle);
+console.log(typeof cercle.area);
+

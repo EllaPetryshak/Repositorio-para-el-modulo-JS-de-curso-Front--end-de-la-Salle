@@ -101,6 +101,7 @@ for (let i = 0; i < cotxes.length; i++) {
   llistaDeMarcas.push(cotxes[i].marca);
 }
  console.log(llistaDeMarcas);
+ 
 
  //TODO: cread una variable que contenga la suma de una propiedad (que sea numerica)
  let sumaAnys = 0;
