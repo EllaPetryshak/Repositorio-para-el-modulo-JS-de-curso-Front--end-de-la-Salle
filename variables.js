@@ -31,20 +31,55 @@ b = c;
 //TODO: afegiu el codi
 
 console.log(a, b) //2, 1
- [a, b] = [b, a]
+ /*[a, b] = [b, a]*/
  console.log(a, b); //1, 2
 
 
 //TODO: arrays, objects
 
-const PI = "3.1415"
+/*const PI = "3.1415"
 radi = 4
 console.log("L'area del cercle es:" + PI*radi**2);
 
 cercle = {
-  /*radi: "4 metros",*/
+  radi: "4 metros",
   area: PI*radi**2 + "metros cuadrados"
 }
 console.log(cercle);
-console.log(typeof cercle.area);
+console.log(typeof cercle.area);*/
+
+// ----------------------------------------------------------------------------
+
+// Transformació de tipus de variables
+
+const PI = "3.1415"
+radi = 4.5
+
+console.log("L'àrea del cercle és: " + PI*radi**2);
+
+cercle = {
+    area: PI*radi**2 + " metros cuadrados"
+}
+
+console.log(typeof cercle.area, typeof parseFloat(cercle.area));
+
+radiString = radi.toString()
+
+console.log(radiString, typeof radiString);
+console.log(" ");
+
+data = {
+  data0: PI,
+  data1: parseFloat(PI),
+  data2: parseInt(PI),
+  data3: radi,
+  data4: radi.toString()
+}
+
+console.log(data.data0, typeof data.data0);
+console.log(data.data1, typeof data.data1);
+console.log(data.data2, typeof data.data2);
+console.log(data.data3, typeof data.data3);
+console.log(data.data4, typeof data.data4);
+
 
