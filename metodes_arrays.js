@@ -6,7 +6,7 @@ hearts = ["❤", "🧡", "💛", "💚", "💙", "💜"]
 
 console.log(animals, hearts);
 console.log(animals.concat(hearts));//une los dos arrays
-console.log(amimals.concat("🐮", {nombre:"vaca"}));
+/*console.log(amimals.concat("🐮", {nombre:"vaca"}));*/
 console.log([animals, hearts]);// crea un array de arrays
 
 console.log(animals.join ());
@@ -25,10 +25,10 @@ console.log(animals.push("🐍"));
 console.log(animals);
 
 //flat() une en unico array el array y sus subarrays
-console.log("%cMètodes d'arrays", "font-weight: bold");
+
 
 //Omar------------------------------------------------------------------------------------------------
-
+console.log("%cMètodes d'arrays", "font-weight: bold");
 // * provar mètodes concat(), join(), pop(), push(), shift(), unshift(), flat()
 
 animals = ["🐶", "🐱", "🐭", "🐍", "🐘"]
