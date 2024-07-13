@@ -187,14 +187,14 @@ function realizarPedido() {
   let emoji;
   
   switch (prenda) {
-      case 'camiseta':
-          emoji = '👕';
+      case "camiseta":
+          emoji = "👕";
           break;
-      case 'pantalon':
-          emoji = '👖';
+      case "pantalon":
+          emoji = "👖";
           break;
-      case 'gorra':
-          emoji = '🧢';
+      case "gorra":
+          emoji = "🧢";
           break;
       default:
           console.log("Prenda no válida.");
@@ -205,3 +205,87 @@ function realizarPedido() {
 }
 
 realizarPedido();
+
+ //-------------------------------------------------------------------------------------------------------------Omar
+
+ // crea una función que al ejecutarla pida un animal por el prompt y te dé las instrucciones para cuidarlo (con un emoji del animal correspondiente)
+
+function animalico() {  // Solución de Gonzalo
+  let animal = prompt("introduce un nombre de animal").trim().toLowerCase();
+
+  if (animal == "perro") {
+      console.log("🐩: tienes que sacarlo a pasear 3 veces al dia minimo media hora");
+  } else if (animal == "gato") {
+      console.log("🐈: ni se te ocurra bañarlo, que se rallan");
+  } else if (animal == "panda") {
+      console.log("🐼: Dale bambu del bueno ahi");
+  } else if (animal == "orangután" || animal == "orangutan") {
+      console.log("🦧: Claramente no deberias tener un Orangutan");
+  } else if (animal == "dragón" || animal == "dragon") {
+      console.log("🐲: Quizas deberias dejar las drogas");
+  } else {
+      console.log("no sé cómo se cuida ese tipo de animal, introduce otro"); // tambien podria usarse un alert()
+      animalico();
+  }
+}
+
+// crea una función que pida tu nombre completo y te diga si tienes un nombre compuesto o no
+
+nombreCompuesto = () => {  // Solución de Xavi
+  let nombreCompleto = prompt('Dime tu nombre competo y tu primer apellido');
+
+  let largoNombreCompleto = nombreCompleto.split(" ").length;
+
+  if (largoNombreCompleto > 2) console.log('Tienes más de 1 nombre');
+  else console.log('Tienes 1 solo nombre');
+}
+
+// crea una función que pida dos números y un símbolo y haga la operación correspondiente (+, -, *, /, %)
+
+function calcular() {   // Solución de Myrella
+  let operacion = prompt("Introduzca la operación que desea realizar (+, -, *, /, %)")
+  if (!"+-*/%".includes(operacion)) {
+      alert("Eso no es un símbolo aceptable");
+      return;
+  }
+
+  let x = parseFloat(prompt("introduzca el primer numero"))
+  if (isNaN(x)) {
+      alert("El número introducido no es válido")
+      return;
+  }
+
+  let y = parseFloat(prompt("introduzca el segundo numero"))
+  if (isNaN(y)) {
+      alert("El número introducido no es válido")
+      return;
+  }
+
+  switch (operacion) {
+      case "+":
+          alert("El resultado es: " + (x + y));
+          break;
+      case "-":
+          alert("El resultado es: " + (x - y));
+          break;
+      case "*":
+          alert("El resultado es: " + (x * y));
+          break;
+      case "/":
+          if (y !== 0) {
+              alert("El resultado es: " + (x / y));
+          } else {
+              alert("No se puede dividir por cero");
+          }
+          break;
+      case "%":
+          if (y !== 0) {
+              alert("El resultado es: " + (x % y));
+          } else {
+              alert("No se puede dividir por cero");
+          }
+          break;
+  }
+}
+
+// TODO: crea una función que divida dos números enteros y te devuelva en un array el resultado y el resto (residuo)
