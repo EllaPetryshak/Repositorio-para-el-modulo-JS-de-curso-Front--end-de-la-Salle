@@ -78,10 +78,39 @@ for (let i = 0; i < alumnos.length; i++) {
 }
 
 // TODO: escribe un bucle que muestre 10 veces un mensaje por la consola con el text en color rojo y azul alternativamente
+for (let i = 0; i < 10; i++) {
+  if (i % 2 === 0) {
+      console.log();
+  } else {
+      console.log();
+  }
+}
+
 
 // TODO: escribe un bucle que muestre los números del 0 al 20 y muestre a su lado "hola" si es multiple de 2, "adeu" si es multiple de 3 i "què tal?" si es múltiple de 5
+for (let i = 0; i <= 20; i++) {
+  let message = '';
+
+  if (i % 2 === 0) {
+      message += 'hola'; 
+  }
+  if (i % 3 === 0) {
+      message += (message ? ', ' : '') + 'adeu';  // Añadir "adeu" si es múltiplo de 3
+  }
+  if (i % 5 === 0) {
+      message += (message ? ', ' : '') + 'què tal?';  // Añadir "què tal?" si es múltiplo de 5
+  }
+
+  console.log(`${i}: ${message}`);
+}
+
 
 // TODO: fes un contador que només mostri els números que tinguin un dígit contingut a la string definida per l'usuari (amb prompt) fins a 100
+
+for (let i = 0; i <= 100; i++) {
+  
+  }
+  
 
 // TODO: llista de la compra. Fes que un prompt es repeteixi fins que l'usuari introdueixi una paraula clau (useu BREAK); fins llavors, cada paraula introduida serà un item de la llista de la compra, que s'escriurà després de que l'usuari l'aturi amb el format:       
 //                       Llista de la compra:
