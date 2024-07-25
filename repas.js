@@ -55,25 +55,7 @@ console.log(parseCustomFloat("234.1234.25.5"));
 
 // TODO: crea una funció que agafi un string i que torni una lletra aleatoria (sense contar espais i signes de puntuació)
 
-function getRandomLetter(str) {
-  // Filtra els caràcters alfabètics de la cadena
-  const letters = str.replace(/[^a-zA-Z]/g, '');
 
-  // Comprova si hi ha lletres disponibles
-  if (letters.length === 0) {
-      return null; // O retorna un valor per defecte com "" si no hi ha lletres
-  }
-
-  // Selecciona una lletra aleatòria
-  const randomIndex = Math.floor(Math.random() * letters.length);
-  return letters[randomIndex];
-}
-
-// Proves
-
-console.log(getRandomLetter("1234@#$%"));              // null (no hi ha lletres)
-console.log(getRandomLetter("A quick brown fox"));    // Una lletra aleatòria de "Aquickbrownfox"
-console.log(getRandomLetter("A!b@c#d$e%f^g&h*i(j)k")); // Una lletra aleatòria de "abcdefghijk"
 
 
 // TODO: crea una funció que agafi un text i li'n separi les paraules (sense signes de puntuació) i les torni en un nou string separades per espais (sense usar arrays)
@@ -217,17 +199,69 @@ checkBirthdayParadox(21);
 //     cognom: "Olmedo",
 //     edat: 33
 // }
+// Funció per convertir un array de strings a un objecte
+function arrayToObject(dataArray) {
+  let resultat = {};
+  dataArray.forEach(data => {
+      let parts = data.split(' ');
+      let clau = parts[0].toLowerCase();
+      let valor = parts.slice(1).join(' ');
+      
+      // Mapatge de claus a propietats de l'objecte
+      if (clau === "nom") {
+          resultat.nom = valor;
+      } else if (clau === "cog") {
+          resultat.cognom = valor;
+      } else if (clau === "age") {
+          resultat.edat = parseInt(valor, 10);
+      }
+  });
+  return resultat;
+}
+
+// Funció per convertir una string a un objecte
+function stringToObject(dataString) {
+  // Dividim la string en un array de sub-strings
+  let dataArray = dataString.split(' ');
+  let resultat = {};
+  
+  for (let i = 0; i < dataArray.length; i += 2) {
+      let clau = dataArray[i].toLowerCase();
+      let valor = dataArray[i + 1];
+      
+      // Mapatge de claus a propietats de l'objecte
+      if (clau === "nom") {
+          resultat.nom = valor;
+      } else if (clau === "cog") {
+          resultat.cognom = valor;
+      } else if (clau === "age") {
+          resultat.edat = parseInt(valor, 10);
+      }
+  }
+  return resultat;
+}
+
+// Exemples d'ús
+let dataArray = ["NOM Omar", "COG Olmedo", "AGE 33"];
+let dataString = "NOM Omar COG Olmedo AGE 33";
+
+let objecteDeArray = arrayToObject(dataArray);
+let objecteDeString = stringToObject(dataString);
+
+console.log(objecteDeArray); // { nom: "Omar", cognom: "Olmedo", edat: 33 }
+console.log(objecteDeString); // { nom: "Omar", cognom: "Olmedo", edat: 33 }
+
 
 // TODO: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array d'objectes amb els noms de les columnes com a propietats
 // PISTA: necessitareu ajuda. Demaneu-la
 // PISTA 2: encara que no hi hagi \n per marcar els salts de línia, els detexta igual perquè uso cometes ``
 
-var csv = `Year,Make,Model,Description,Price
+/*var csv = `Year,Make,Model,Description,Price
 1997,Ford,E350,ac abs moon,3000.00
 1999,Chevy,Venture "Extended Edition",,4900.00
 1999,Chevy,Venture "Extended Edition XL",,5000.00
 1996,Jeep,Grand Cherokee,MUST SELL! air moon-roof loaded,4799.00`
-
+*/
 // var cotxes = [ { Year = 1997,
 //                  Make = "Ford",
 //                  Model = "E350",
@@ -240,3 +274,66 @@ var csv = `Year,Make,Model,Description,Price
 //                  Description = "",
 //                  Price = 3000.00
 //                 } ];
+
+function csvToArray(csv) {
+  // Separar les línies
+  var lines = csv.split('\n');
+  
+  // La primera línia conté les capçaleres
+  var headers = lines[0].split(',');
+  
+  // Crear una llista d'objectes a partir de les línies restants
+  var result = lines.slice(1).map(function(line) {
+      // Separar cada columna de la línia
+      var values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+      
+      // Crear un objecte amb les capçaleres com a claus i els valors corresponents
+      var obj = {};
+      headers.forEach(function(header, index) {
+          obj[header] = values[index].replace(/(^"|"$)/g, ''); // Eliminar cometes dobles
+      });
+      return obj;
+  });
+  
+  return result;
+}
+
+var csv = `Year,Make,Model,Description,Price
+1997,Ford,E350,ac abs moon,3000.00
+1999,Chevy,Venture "Extended Edition",,4900.00
+1999,Chevy,Venture "Extended Edition XL",,5000.00
+1996,Jeep,Grand Cherokee,MUST SELL! air moon-roof loaded,4799.00`;
+
+var cotxes = csvToArray(csv);
+console.log(cotxes);
+
+
+function canPlantFlowers(flowerbed, k) {
+  let count = 0; // Count of new flowers that can be planted
+  let n = flowerbed.length;
+  
+  for (let i = 0; i < n; i++) {
+      if (flowerbed[i] === 0) {
+          // Check if the left and right positions are also empty or out of bounds
+          let emptyLeft = (i === 0) || (flowerbed[i - 1] === 0);
+          let emptyRight = (i === n - 1) || (flowerbed[i + 1] === 0);
+          
+          if (emptyLeft && emptyRight) {
+              flowerbed[i] = 1; // Plant a flower
+              count++;
+              
+              if (count >= k) {
+                  return true; // We've planted enough flowers
+              }
+          }
+      }
+  }
+  
+  return count >= k;
+}
+
+// Example usage:
+console.log(canPlantFlowers([1, 0, 0, 0, 1], 1)); // true
+console.log(canPlantFlowers([1, 0, 0, 0, 1], 2)); // false
+console.log(canPlantFlowers([0, 0, 0, 0, 0], 3)); // true
+console.log(canPlantFlowers([1, 0, 1, 0, 1], 1)); // false
