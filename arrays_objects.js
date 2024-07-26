@@ -58,7 +58,7 @@ alumnes = [
 
  //------------------------------------------------------------------------------------------------
 
- //TODO: cread un array con 5 objetos dentro que tengan las mismas 4 propiedades
+ //: cread un array con 5 objetos dentro que tengan las mismas 4 propiedades
   cotxes = [
   {
       marca: "Toyota",
@@ -95,7 +95,7 @@ alumnes = [
 console.log(cotxes);
 console.log(cotxes.toString());
 
- //TODO: cread un array que contenga una lista de una de las propiedades de los objetos
+ //: cread un array que contenga una lista de una de las propiedades de los objetos
 
  /*let llistaDeMarcas = [];
 for (let i = 0; i < cotxes.length; i++) {
@@ -107,7 +107,7 @@ for (let i = 0; i < cotxes.length; i++) {
  console.log(llista);
  
 
- //TODO: cread una variable que contenga la suma de una propiedad (que sea numerica)
+ //: cread una variable que contenga la suma de una propiedad (que sea numerica)
  /*let sumaAnys = 0;
  for (let i = 0; i < cotxes.length; i++) {
    sumaAnys += cotxes[i].any;
@@ -115,9 +115,9 @@ for (let i = 0; i < cotxes.length; i++) {
  console.log(sumaAnys)*/
  let sumaAnys = cotxes[0].any + cotxes[1].any + cotxes[2].any + cotxes[3].any + cotxes[4].any
 console.log("Suma anys: " + sumaAnys);
- //TODO: monstrar por consola todo lo anterior
+ //: monstrar por consola todo lo anterior
  
- //TODO: monstrar por consola  una frase que resuma las propiedades de cada objeto
+ //: monstrar por consola  una frase que resuma las propiedades de cada objeto
  /*for (let i = 0; i < cotxes.length; i++) {
   const coche = cotxes[i];
   console.log(`El Cotxe ${i + 1}: Marca ${coche.marca} el model ${coche.model} del any ${coche.any} de color ${coche.color}`);
@@ -130,7 +130,7 @@ console.log(`El cotxe ${cotxes[3].marca} el model ${cotxes[3].model} del any ${c
 console.log(`El cotxe ${cotxes[4].marca} el model ${cotxes[4].model} del any ${cotxes[4].any} de color ${cotxes[4].color}`);
 
 
- //TODO: buscad una manera de mostrar todos los objetos por consola en forma de tabla
+ //: buscad una manera de mostrar todos los objetos por consola en forma de tabla
  console.table(cotxes);
 
   

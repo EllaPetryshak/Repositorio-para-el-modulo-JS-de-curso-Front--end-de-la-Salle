@@ -90,7 +90,7 @@ if (!user) {
     console.log("Bienvenido, " + user);
 }
 
-// TODO: crea una función que al ejecutarla pida un animal por el prompt y te dé las instrucciones para cuidarlo (con un emoji del animal correspondiente)
+// : crea una función que al ejecutarla pida un animal por el prompt y te dé las instrucciones para cuidarlo (con un emoji del animal correspondiente)
 
 function cuidadoAnimal() {
  animal = prompt("Ingrese un animal (perro, gato, pez, hamster, pájaro):").toLowerCase();
@@ -144,7 +144,7 @@ nombreCompleto = prompt("Ingrese su nombre completo:");
 
 verificarNombreCompuesto();
 
-// TODO: crea una función que pida dos números y un símbolo y haga la operación correspondiente (+, -, *, /, %)
+// : crea una función que pida dos números y un símbolo y haga la operación correspondiente (+, -, *, /, %)
   function calcularOperacion() {
   numero1 = prompt("Ingrese el primer número:");
   numero2 = prompt("Ingrese el segundo número:");
@@ -178,7 +178,7 @@ if (calcular) {
 }
 }
 calcularOperacion();
-// TODO: crea una función que pida por prompt si quieres camiseta, pantalon o gorra, de qué color y de qué talla (S, M, L, XL) y te muestre por consola un resumen de tu pedido "Has pedido una camiseta 👕 azul 🔵 talla XL"
+// : crea una función que pida por prompt si quieres camiseta, pantalon o gorra, de qué color y de qué talla (S, M, L, XL) y te muestre por consola un resumen de tu pedido "Has pedido una camiseta 👕 azul 🔵 talla XL"
 function realizarPedido() {
   prenda = prompt("¿Qué prenda deseas? (camiseta, pantalon, gorra)").toLowerCase();
   color = prompt("¿Qué color prefieres?");
@@ -289,10 +289,8 @@ function calcular() {   // Solución de Myrella
 }
 
 
-// TODO: crea una función que esté al principio de todo del script y te permita decidir cuál de los cuatro ejercicios anteriores se ejecuta
 
-
-// TODO: crea una función que divida dos números enteros y te devuelva en un array el resultado y el resto (residuo)
+// : crea una función que divida dos números enteros y te devuelva en un array el resultado y el resto (residuo)
 
 function dividirYResiduo(dividendo, divisor) {
   if (divisor === 0) {
@@ -310,7 +308,7 @@ let resultado = dividirYResiduo(10, 3);
 console.log(resultado);  // Debería imprimir [3, 1]
 
 
-// TODO: crea una función que esté al principio de todo del script y te permita decidir cuál de los cuatro ejercicios anteriores se ejecuta
+// : crea una función que esté al principio de todo del script y te permita decidir cuál de los cuatro ejercicios anteriores se ejecuta
 
 
 // crea una función que pida por prompt si quieres camiseta, pantalon o gorra, de qué color y de qué talla (S, M, L, XL) y te muestre por consola un resumen de tu pedido "Has pedido una camiseta 👕 azul 🔵 talla XL"

@@ -77,7 +77,7 @@ for (let i = 0; i < alumnos.length; i++) {
     console.log("Esto es  " + animales[i]);
 }
 
-// TODO: escribe un bucle que muestre 10 veces un mensaje por la consola con el text en color rojo y azul alternativamente
+// : escribe un bucle que muestre 10 veces un mensaje por la consola con el text en color rojo y azul alternativamente
 for (let i = 0; i < 10; i++) {
   if (i % 2 === 0) {
       console.log(`%cMensaje número ${i + 1}`, "color: red");
@@ -89,7 +89,7 @@ for (let i = 0; i < 10; i++) {
 
 console.log("----------------------");
 
-// TODO: escribe un bucle que muestre los números del 0 al 20 y muestre a su lado "hola" si es multiple de 2, "adeu" si es multiple de 3 i "què tal?" si es múltiple de 5
+// : escribe un bucle que muestre los números del 0 al 20 y muestre a su lado "hola" si es multiple de 2, "adeu" si es multiple de 3 i "què tal?" si es múltiple de 5
 for (let i = 0; i <= 20; i++) {
   let message = '';
 
@@ -106,7 +106,7 @@ for (let i = 0; i <= 20; i++) {
   console.log(`${i}: ${message}`);
 }
 
-// TODO: fes un contador que mostri a la consola els números de l'1 al número que introdueixis com a paràmentre (fins a 1000 com a màxim) (p.e. "234" mostra 2, 3, 4, 12, 13, 14, 20, 21, 22, 23, 24... , 47, 48, 49, 52, 53, 54...)
+// fes un contador que mostri a la consola els números de l'1 al número que introdueixis com a paràmentre (fins a 1000 com a màxim) (p.e. "234" mostra 2, 3, 4, 12, 13, 14, 20, 21, 22, 23, 24... , 47, 48, 49, 52, 53, 54...)
 
 // Solicitar al usuario que introduzca un número
 /*const userInput = prompt("Introduce un número (1-1000):");
@@ -116,7 +116,7 @@ for (let i = 1; i <= 1000; i++) {
 
 
      
-// TODO: fes un contador que només mostri els números que tinguin un dígit contingut a la string definida per l'usuari (amb prompt) fins a 100
+// T: fes un contador que només mostri els números que tinguin un dígit contingut a la string definida per l'usuari (amb prompt) fins a 100
 /*const userInput = prompt("Introduex una cadena de dígitos: ");
 
 for (let i = 0; i <= 100; i++) {
@@ -125,7 +125,7 @@ for (let i = 0; i <= 100; i++) {
 }*/
   
 
-// TODO: llista de la compra. Fes que un prompt es repeteixi fins que l'usuari introdueixi una paraula clau (useu BREAK); fins llavors, cada paraula introduida serà un item de la llista de la compra, que s'escriurà després de que l'usuari l'aturi amb el format:       
+// : llista de la compra. Fes que un prompt es repeteixi fins que l'usuari introdueixi una paraula clau (useu BREAK); fins llavors, cada paraula introduida serà un item de la llista de la compra, que s'escriurà després de que l'usuari l'aturi amb el format:       
 //                       Llista de la compra:
 //                       - Pa
 //                       - Mantega
@@ -137,14 +137,14 @@ for (let i = 0; i <= 100; i++) {
 
 
 //-----------------------------------------------Omar
-// TODO: escribe un bucle que muestre 10 veces un mensaje por la consola con el text en color rojo y azul alternativamente
+// : escribe un bucle que muestre 10 veces un mensaje por la consola con el text en color rojo y azul alternativamente
 
 for (let i = 0; i < 10; i++) {
   if (i % 2 == 0) console.log("%cHolis, soy un mensaje azul 💙", "color: blue");  // pares
   else console.log("%cHolis, soy un mensaje rosa 💗", "color: pink");             // impares
 }
 
-// TODO: escribe un bucle que muestre los números del 1 al 20 y muestre a su lado "hola" si es multiple de 2, "adeu" si es multiple de 3 i "què tal?" si es múltiple de 5
+// T: escribe un bucle que muestre los números del 1 al 20 y muestre a su lado "hola" si es multiple de 2, "adeu" si es multiple de 3 i "què tal?" si es múltiple de 5
 
 for (let i = 1; i < 21; i++) {
   let missatge = i

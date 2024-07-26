@@ -2,186 +2,148 @@
 
 // TODO: mostra les taules de multiplicar del 1 al 9 per la consola
 
-// Funció per imprimir una taula de multiplicar
-function taulaDeMultiplicar(num) {
-  console.log(`Taula de multiplicar del ${num}:`);
-  for (let i = 1; i <= 9; i++) {
-      console.log(`${num} x ${i} = ${num * i}`);
-  }
-  console.log(""); // Linea en blanc per separar les taules
-}
-
-// Imprimir les taules de multiplicar del 1 al 9
 for (let i = 1; i <= 9; i++) {
-  taulaDeMultiplicar(i);
+  console.log(`Taula del ${i}:`);
+  for (let k = 1; k <= 9; k++){
+    console.log(`${i} x ${k} = ${i * k}`);
+  }
+  console.log("");
 }
-
 
 // TODO: recrea la funció parseFloat() de manera que agafi els números encara que hi hagi lletres abans i accepti com a separador decimal els símbols ",", "." i "'". P.e: "hola89'234" ha de tornar "89.234", "43'35adeu" ha de tornar "43.35", "amor45.9odi" ha de tornar "45.9", "234.1234.25.5" ha de tornar "234.1234"
 
-function parseCustomFloat(str) {
-  // Primer, reemplaça separadors decimals diferents per un únic símbol ('.')
-  // T'assegures que només es mantingui el primer separador decimal trobat i eliminar els altres
-  let result = str
-      .replace(/,/g, '.')   // Reemplaça ',' amb '.'
-      .replace(/'(?=\d)/g, '.') // Reemplaça apostrofes seguides de dígits amb '.'
-      .replace(/[^0-9.]/g, ''); // Elimina qualsevol caràcter que no sigui dígit o '.'
-  
-  // Assegura't que només hi hagi un separador decimal
-  // Troba la primera aparició del separador decimal
-  const decimalIndex = result.indexOf('.');
+function customParseFloat(input) {
+    // Defineix els caràcters vàlids i el separador decimal desitjat
+    const validChars = "0123456789.,'-+";
+    let numberStr = " ";
+    let decimalPointReplaced = false;
 
-  if (decimalIndex !== -1) {
-      // Separa la part abans i després del primer separador decimal
-      const beforeDecimal = result.substring(0, decimalIndex);
-      const afterDecimal = result.substring(decimalIndex + 1).replace(/\./g, ''); // Elimina els separadors decimals addicionals
+    // Recorre la cadena d'entrada
+    for (let char of input) {
+        if (validChars.includes(char)) {
+            if (char === '.' || char === ',' || char === "'") {
+                // Substitueix el primer separador decimal per un punt
+                if (!decimalPointReplaced) {
+                    numberStr += '.';
+                    decimalPointReplaced = true;
+                }
+            } else {
+                numberStr += char;
+            }
+        }
+    }
 
-      // Recombina les parts amb només un separador decimal
-      result = beforeDecimal + '.' + afterDecimal;
-  }
-
-  // Si la cadena resultant és buida, retorna 0
-  return result ? parseFloat(result) : 0;
+    // Converteix la cadena a número flotant
+    return parseFloat(numberStr);
 }
 
 // Proves
-console.log(parseCustomFloat("hola89'234"));
-console.log(parseCustomFloat("43'35adeu")); 
-console.log(parseCustomFloat("amor45.9odi"));
-console.log(parseCustomFloat("234.1234.25.5")); 
+console.log(customParseFloat("hola89'234"));
+console.log(customParseFloat("43'35adeu")); 
+console.log(customParseFloat("amor45.9odi"));
+console.log(customParseFloat("234.1234.25.5")); 
 
   
+  
+
 
 
 // TODO: crea una funció que agafi un string i que torni una lletra aleatoria (sense contar espais i signes de puntuació)
 
-
-
+function lletraAleatoria (input) {
+  let lletres = [];
+  for (let char of input) {
+    if ((char >= "A" && char <= "Z")|| (char >= "a" && char <= "z")){
+      lletres.push(char);
+    }
+  }
+  if (lletres.length === 0){
+    return null;
+  }
+  const aleatotiIndex = Math.floor(Math.random() * lletres.length);
+  return lletres[aleatotiIndex]
+}
+console.log(lletraAleatoria("Hello, Ella"));
+console.log(lletraAleatoria("233 6677"));
 
 // TODO: crea una funció que agafi un text i li'n separi les paraules (sense signes de puntuació) i les torni en un nou string separades per espais (sense usar arrays)
-
-function separateWords(text) {
+function separateWords(input) {
   let result = '';
-  let inWord = false;
-
-  // Recorre cada caràcter del text
-  for (let i = 0; i < text.length; i++) {
-      const char = text[i];
+  let word = '';
+  
+  for (let i = 0; i < input.length; i++) {
+      let char = input[i];
       
-      // Comprova si el caràcter és una lletra (majúscula o minúscula)
-      if (/[a-zA-Z]/.test(char)) {
-          if (!inWord) {
-              // Si no estem actualment dins d'una paraula, afegim un espai només si hi ha paraules prèviament
-              if (result.length > 0) {
-                  result += ' ';
-              }
-              inWord = true;
+      // Comprovem si el caràcter és una lletra
+      if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+          word += char; // Afegeix el caràcter a l'actual paraula
+      } else if (char === ' ' || (char < 'a' || char > 'z' && char < 'A' || char > 'Z')) {
+          // Si trobem un espai o un signe de puntuació i tenim una paraula
+          if (word.length > 0) {
+              result += word + ' '; // Afegeix la paraula a result amb un espai
+              word = ''; // Reiniciem la paraula
           }
-          result += char;
-      } else {
-          // Si el caràcter no és una lletra, indiquem que hem sortit d'una paraula
-          inWord = false;
       }
   }
+  
+  // Afegim l'última paraula si existeix
+  if (word.length > 0) {
+      result += word;
+  }
 
-  return result;
+  // Eliminem l'espai extra al final si n'hi ha
+  return result.trim();
 }
 
-// Prova
-console.log(separateWords("Hello-world!"));          // "Hello world"
-
-
+// Exemples d'ús
+console.log(separateWords("Hola, mon! Com estas?")); // "Hola món Com estàs"
+console.log(separateWords("Aquest es un exemple.")); // "Aquest és un exemple"
+console.log(separateWords("JavaScript: es genial!")); // "JavaScript és genial"
+console.log(separateWords("123 456,!!!")); // ""
+  
 // TODO: crea una funció que agafi un string i que torni una paraula aleatòria continguda en ella (sense usar arrays)
-function getRandomWord(text) {
-    let wordCount = 0;
-    let inWord = false;
-    
-    // Primera passada: Comptar el nombre de paraules
-    for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        
-        if (/[a-zA-Z]/.test(char)) {
-            if (!inWord) {
-                wordCount++;
-                inWord = true;
-            }
-        } else {
-            inWord = false;
-        }
-    }
-    
-    // Si no hi ha paraules, retorna null
-    if (wordCount === 0) {
-        return null;
-    }
-    
-    // Generar un índex aleatori de paraula
-    const randomIndex = Math.floor(Math.random() * wordCount);
-    
-    // Segona passada: Trobar la paraula en la posició aleatòria
-    let currentWordIndex = 0;
-    let currentWord = '';
-    inWord = false;
-    
-    for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        
-        if (/[a-zA-Z]/.test(char)) {
-            if (!inWord) {
-                if (currentWordIndex === randomIndex) {
-                    currentWord = char;
-                }
-                inWord = true;
-            } else if (currentWordIndex === randomIndex) {
-                currentWord += char;
-            }
-        } else {
-            if (inWord) {
-                if (currentWordIndex === randomIndex) {
-                    break;
-                }
-                currentWordIndex++;
-            }
-            inWord = false;
-        }
-    }
-    
-    return currentWord;
-}
 
-// Proves
-console.log(getRandomWord("Hola! ¿Cómo estás?"));    // Una paraula aleatòria de "Hola Cómo estás"
-console.log(getRandomWord("1234@#$%"));              // null (no hi ha paraules)
-console.log(getRandomWord("A quick brown fox."));    // Una paraula aleatòria de "A quick brown fox"
-console.log(getRandomWord("Hello-world!"));          // Una paraula aleatòria de "Hello world"
-
+       
 
 // TODO: paradoxa de l'aniversari. Genera N dates d'aniversari aleatòries (1-365) en un array i comprova si hi ha alguna repetida. Fes això per N = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 i mostra a la consola per quins hi ha hagut coincidències d'aniversari
-function generateAndCheckBirthdays(num) {
-  const birthdaySet = new Set();
 
-  for (let i = 0; i < num; i++) {
-      const randomDay = Math.floor(Math.random() * 365) + 1;
+function generateRandomBirthdays(n) {
+  const birthdays = [];
+  
+  for (let i = 0; i < n; i++) {
+      // Genera una data d'aniversari aleatòria entre 1 i 365
+      const birthday = Math.floor(Math.random() * 365) + 1;
 
-      if (birthdaySet.has(randomDay)) {
-          return true; // Hi ha una coincidència
+      // Comprova si la data ja existeix a l'array
+      for (let j = 0; j < birthdays.length; j++) {
+          if (birthdays[j] === birthday) {
+              // Si hi ha una coincidència, retornem true
+              return true;
+          }
       }
-
-      birthdaySet.add(randomDay);
+      
+      // Si no hi ha coincidència, afegim la data a l'array
+      birthdays.push(birthday);
   }
-
-  return false; // No hi ha coincidències
+  
+  // Si acabem el bucle sense coincidències, retornem false
+  return false;
 }
 
 function checkBirthdayParadox() {
-  const testValues = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
-  testValues.forEach(N => {
-      const result = generateAndCheckBirthdays(N) ? 'Coincidència trobada' : 'No hi ha coincidències';
-      console.log(`N = ${N}: ${result}`);
+  const ns = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+  
+  ns.forEach(n => {
+      const hasCollision = generateRandomBirthdays(n);
+      if (hasCollision) {
+          console.log(`Per N = ${n}, hi ha coincidències d'aniversari.`);
+      } else {
+          console.log(`Per N = ${n}, no hi ha coincidències d'aniversari.`);
+      }
   });
 }
 
-// Executar la funció per mostrar els resultats
+// Executa la funció per mostrar els resultats
 checkBirthdayParadox(21);
 
 
