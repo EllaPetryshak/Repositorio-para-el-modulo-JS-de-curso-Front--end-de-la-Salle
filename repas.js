@@ -163,55 +163,27 @@ checkBirthdayParadox(21);
 // }
 // Funció per convertir un array de strings a un objecte
 function arrayToObject(dataArray) {
-  let resultat = {};
-  dataArray.forEach(data => {
-      let parts = data.split(' ');
-      let clau = parts[0].toLowerCase();
-      let valor = parts.slice(1).join(' ');
-      
-      // Mapatge de claus a propietats de l'objecte
-      if (clau === "nom") {
-          resultat.nom = valor;
-      } else if (clau === "cog") {
-          resultat.cognom = valor;
-      } else if (clau === "age") {
-          resultat.edat = parseInt(valor, 10);
+  const result = {};
+  dataArray.forEach(item => {
+      const [key, value] = item.split(' ');
+      switch (key) {
+          case 'NOM':
+              result.nom = value;
+              break;
+          case 'COG':
+              result.cognom = value;
+              break;
+          case 'AGE':
+              result.edat = parseInt(value, 10);
+              break;
+          default:
+              console.warn(`Unknown key: ${key}`);
       }
   });
-  return resultat;
+  return result;
 }
 
-// Funció per convertir una string a un objecte
-function stringToObject(dataString) {
-  // Dividim la string en un array de sub-strings
-  let dataArray = dataString.split(' ');
-  let resultat = {};
-  
-  for (let i = 0; i < dataArray.length; i += 2) {
-      let clau = dataArray[i].toLowerCase();
-      let valor = dataArray[i + 1];
-      
-      // Mapatge de claus a propietats de l'objecte
-      if (clau === "nom") {
-          resultat.nom = valor;
-      } else if (clau === "cog") {
-          resultat.cognom = valor;
-      } else if (clau === "age") {
-          resultat.edat = parseInt(valor, 10);
-      }
-  }
-  return resultat;
-}
 
-// Exemples d'ús
-let dataArray = ["NOM Omar", "COG Olmedo", "AGE 33"];
-let dataString = "NOM Omar COG Olmedo AGE 33";
-
-let objecteDeArray = arrayToObject(dataArray);
-let objecteDeString = stringToObject(dataString);
-
-console.log(objecteDeArray); // { nom: "Omar", cognom: "Olmedo", edat: 33 }
-console.log(objecteDeString); // { nom: "Omar", cognom: "Olmedo", edat: 33 }
 
 
 // TODO: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array d'objectes amb els noms de les columnes com a propietats
@@ -269,6 +241,7 @@ var csv = `Year,Make,Model,Description,Price
 var cotxes = csvToArray(csv);
 console.log(cotxes);
 
+//exercici img nl2
 
 function canPlantFlowers(flowerbed, k) {
   let count = 0; // Count of new flowers that can be planted
