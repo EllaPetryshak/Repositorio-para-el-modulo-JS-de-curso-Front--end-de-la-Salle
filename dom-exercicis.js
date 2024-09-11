@@ -215,3 +215,57 @@ resultatP.textContent = `${celsius}°C són ${fahrenheit.toFixed(2)}°F`;
       resultatP9.textContent = "Si us plau, introdueix una temperatura vàlida.";
   }
 });
+
+//exercici 10
+const num1Input = document.getElementById('num1');
+const num2Input = document.getElementById('num2');
+const operacioSelect = document.getElementById('operacio');
+const calcularBtn = document.getElementById('calcularBtn');
+const resultatP10 = document.getElementById('resultat10');
+
+// Funció per realitzar l'operació seleccionada
+function calcular(num1, num2, operacio) {
+    let resultat10;
+    switch (operacio) {
+      case 'suma':
+          resultat10 = num1 + num2;
+          break;
+      case 'resta':
+          resultat10 = num1 - num2;
+          break;
+      case 'multiplicacio':
+          resultat10 = num1 * num2;
+          break;
+      case 'divisio':
+          if (num2 !== 0) {
+              resultat10 = num1 / num2;
+          } else {
+              resultat10 = "No es pot dividir per 0";
+          }
+          break;
+          default:
+                    resultat10 = "Operació no vàlida";
+            }
+
+            return resultat10;
+        }
+
+        // Afegim un esdeveniment 'click' al botó
+        calcularBtn.addEventListener('click', function() {
+            // Agafem els valors dels inputs
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const operacio = operacioSelect.value;
+
+            // Comprovem si els valors introduïts són números vàlids
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Realitzem l'operació
+                const resultat10 = calcular(num1, num2, operacio);
+
+                // Mostrem el resultat
+                resultatP10.textContent = `Resultat: ${resultat10}`;
+            } else {
+                // Missatge d'error si no s'introdueixen números vàlids
+                resultatP10.textContent = "Si us plau, introdueix números vàlids.";
+            }
+        });
