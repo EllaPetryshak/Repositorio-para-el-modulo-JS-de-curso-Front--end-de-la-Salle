@@ -269,3 +269,88 @@ function calcular(num1, num2, operacio) {
                 resultatP10.textContent = "Si us plau, introdueix números vàlids.";
             }
         });
+
+        //ecercici 11
+        // Agafem els elements del DOM
+        const pantalla = document.getElementById('pantalla');
+        const botons = document.querySelectorAll('.botons button');
+        let operand1 = '';
+        let operand2 = '';
+        let operacioActual = '';
+        let operacio11 = '';
+
+        // Funció per actualitzar la pantalla
+        function actualitzarPantalla(valor) {
+            pantalla.value = valor;
+        }
+
+        // Funció per realitzar el càlcul
+        function calcular() {
+            const num1 = parseFloat(operand1);
+            const num2 = parseFloat(operand2);
+            let resultat;
+
+            switch (operacioActual) {
+                case '+':
+                    resultat = num1 + num2;
+                    break;
+                case '-':
+                    resultat = num1 - num2;
+                    break;
+                case '×':
+                    resultat = num1 * num2;
+                    break;
+                case '÷':
+                    if (num2 !== 0) {
+                        resultat = num1 / num2;
+                    } else {
+                        resultat = "Error";
+                    }
+                    break;
+                default:
+                    resultat = "Error";
+            }
+
+            return resultat;
+        }
+
+        // Event listeners per als botons
+        botons.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const valor = boton.textContent;
+
+                if (valor === 'C') {
+                    // Esborra la pantalla i restableix les variables
+                    actualitzarPantalla('');
+                    operand1 = '';
+                    operand2 = '';
+                    operacioActual = '';
+                } else if (valor === '=') {
+                    // Realitza el càlcul i mostra el resultat
+                    if (operand1 && operand2 && operacioActual) {
+                        const resultat = calcular();
+                        actualitzarPantalla(resultat);
+                        operand1 = resultat;
+                        operand2 = '';
+                        operacioActual = '';
+                    }
+                } else if (['+', '-', '×', '÷'].includes(valor)) {
+                    // Estableix l'operació actual
+                    operacioActual = valor;
+                    operand1 = pantalla.value;
+                    operand2 = '';
+                    actualitzarPantalla('');
+                } else {
+                    // Afegim el número o el caràcter al visor
+                    if (operacioActual && !operand2) {
+                        operand2 = valor;
+                        actualitzarPantalla(operand2);
+                    } else {
+                        actualitzarPantalla(pantalla.value + valor);
+                        operand2 = pantalla.value + valor;
+                    }
+                }
+            });
+        });
+
+

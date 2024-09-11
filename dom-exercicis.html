@@ -4,6 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dom exercicis</title>
+  <style>
+    .calculadora {
+        max-width: 220px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .pantalla {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        text-align: right;
+        padding: 5px;
+        border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        .botons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .botons button {
+            width: 100%;
+            height: 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+        .botons button.operacio {
+            background-color: #f7b32b;
+            color: white;
+        }
+        .botons button.operacio:hover {
+            background-color: #f59c42;
+        }
+        .botons button.borrar {
+            background-color: #ff5c5c;
+            color: white;
+        }
+        .botons button.borrar:hover {
+            background-color: #e04d4d;
+        }
+        .botons button.equals {
+            background-color: #28a745;
+            color: white;
+            grid-column: span 4;
+        }
+        .botons button.equals:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
 
@@ -142,6 +200,36 @@
     <button id="calcularBtn">Calcular</button>
 <!-- Aquí es mostrarà el resultat -->
 <p id="resultat10"></p>
+
+<!-- exercici 11 -->
+<div class="calculadora">
+  <input type="text" id="pantalla" class="pantalla" disabled>
+
+  <div class="botons">
+      <button class="borrar" id="borrar">C</button>
+      <button class="operacio" id="divisio">÷</button>
+      <button class="operacio" id="multiplicacio">×</button>
+      <button class="operacio" id="resta">-</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operacio" id="suma">+</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="equals" id="igual">=</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+
+      <button>0</button>
+  </div>
+</div>
+
+
 
   <script src="dom-exercicis.js"></script>
 </body>
