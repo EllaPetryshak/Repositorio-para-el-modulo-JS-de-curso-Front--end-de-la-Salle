@@ -272,7 +272,7 @@ function calcular(num1, num2, operacio) {
 
         //ecercici 11
         // Agafem els elements del DOM
-        const pantalla = document.getElementById('pantalla');
+       const pantalla = document.getElementById('pantalla');
         const botons = document.querySelectorAll('.botons button');
         let operand1 = '';
         let operand2 = '';
@@ -352,5 +352,315 @@ function calcular(num1, num2, operacio) {
                 }
             });
         });
+/*//Exercici 11.1
+// Agafem els elements del DOM
+const pantalla = document.getElementById('pantalla');
+const botons = document.querySelectorAll('.botons button');
+let operand1 = '';
+let operand2 = '';
+let operacioActual = '';
+let operacio = '';
+let modeAvancat = false;
+
+// Funció per actualitzar la pantalla
+function actualitzarPantalla(valor) {
+    pantalla.value = valor;
+}
+
+// Funció per realitzar el càlcul
+function calcular() {
+    const num1 = parseFloat(operand1);
+    const num2 = parseFloat(operand2);
+    let resultat;
+
+    switch (operacioActual) {
+        case '+':
+            resultat = num1 + num2;
+            break;
+        case '-':
+            resultat = num1 - num2;
+            break;
+        case '×':
+            resultat = num1 * num2;
+            break;
+        case '÷':
+            if (num2 !== 0) {
+                resultat = num1 / num2;
+            } else {
+                resultat = "Error";
+            }
+            break;
+        case '√':
+            resultat = Math.sqrt(num1);
+            break;
+        case '^':
+            resultat = Math.pow(num1, num2);
+            break;
+        default:
+            resultat = "Error";
+    }
+
+    return resultat;
+}
+
+// Event listeners per als botons
+botons.forEach(boton => {
+    boton.addEventListener('click', () => {
+        const valor = boton.textContent;
+
+        if (valor === 'C') {
+            // Esborra la pantalla i restableix les variables
+            actualitzarPantalla('');
+            operand1 = '';
+            operand2 = '';
+            operacioActual = '';
+        } else if (valor === '=') {
+            // Realitza el càlcul i mostra el resultat
+            if (operand1 && operand2 && operacioActual) {
+                const resultat = calcular();
+                actualitzarPantalla(resultat);
+                operand1 = resultat;
+                operand2 = '';
+                operacioActual = '';
+            }
+        } else if (['+', '-', '×', '÷'].includes(valor)) {
+            // Estableix l'operació actual
+            operacioActual = valor;
+            operand1 = pantalla.value;
+            operand2 = '';
+            actualitzarPantalla('');
+        } else if (['√', '^'].includes(valor)) {
+            // Estableix l'operació avançada
+            operacioActual = valor;
+            operand1 = pantalla.value;
+            operand2 = '';
+            actualitzarPantalla('');
+        } else if (valor === 'Shift') {
+            // Canvia el mode entre bàsic i avançat
+            modeAvancat = !modeAvancat;
+            document.querySelectorAll('.botons .secondary').forEach(btn => {
+                btn.style.display = modeAvancat ? 'block' : 'none';
+            });
+        } else {
+            // Afegim el número o el caràcter al visor
+            if (operacioActual && !operand2) {
+                operand2 = valor;
+                actualitzarPantalla(operand2);
+            } else {
+                actualitzarPantalla(pantalla.value + valor);
+                operand2 = pantalla.value + valor;
+            }
+        }
+    });
+});
+
+// Inicialitzar el mode avançat com a desactivat
+document.querySelectorAll('.botons .secondary').forEach(btn => {
+    btn.style.display = 'none';
+});
+*/
+
+
+//exercici 12
+/*
+// Referències als elements del DOM
+const itemInput = document.getElementById('itemInput');
+const afegirBtn = document.getElementById('afegirBtn');
+const llistaCompra = document.getElementById('llistaCompra');
+
+// Funció per afegir un nou element a la llista
+function afegirElement() {
+    const nouElement = itemInput.value.trim();
+
+    if (nouElement !== '') {
+        const li = document.createElement('li');
+        li.textContent = nouElement;
+
+        // Crear botó per esborrar
+        const esborrarBtn = document.createElement('button');
+        esborrarBtn.textContent = 'Esborrar';
+        esborrarBtn.classList.add('esborrar');
+        // Event listener per esborrar l'element
+        esborrarBtn.addEventListener('click', () => {
+          llistaCompra.removeChild(li);
+      });
+
+      // Afegir el botó a l'element de la llista
+      li.appendChild(esborrarBtn);
+
+      // Afegir l'element a la llista visual
+      llistaCompra.appendChild(li);
+
+      // Buidar l'input després d'afegir
+      itemInput.value = '';
+  }
+}
+
+// Event listener per afegir elements quan es fa clic al botó
+afegirBtn.addEventListener('click', afegirElement);
+
+// Event listener per afegir elements quan es prem "Enter"
+itemInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+      afegirElement();
+  }
+});
+*/
+ 
+//exercici 12.1
+/*
+// Referències als elements del DOM
+const itemInput = document.getElementById('itemInput');
+const afegirBtn = document.getElementById('afegirBtn');
+const ordenarBtn = document.getElementById('ordenarBtn');
+const llistaCompra = document.getElementById('llistaCompra');
+
+let elementsLlista = [];
+
+// Funció per actualitzar la llista al DOM
+function actualitzarLlista() {
+    llistaCompra.innerHTML = '';
+    elementsLlista.forEach((element) => {
+        const li = document.createElement('li');
+        li.textContent = element;
+
+        // Crear botó per esborrar
+        const esborrarBtn = document.createElement('button');
+        esborrarBtn.textContent = 'Esborrar';
+        esborrarBtn.classList.add('esborrar');
+        
+        // Event listener per esborrar l'element
+        esborrarBtn.addEventListener('click', () => {
+            elementsLlista = elementsLlista.filter(el => el !== element);
+            actualitzarLlista();
+        });
+
+        // Afegir el botó a l'element de la llista
+        li.appendChild(esborrarBtn);
+
+        // Afegir l'element a la llista visual
+        llistaCompra.appendChild(li);
+    });
+}
+
+// Funció per afegir un nou element a la llista
+function afegirElement() {
+    const nouElement = itemInput.value.trim();
+
+    if (nouElement !== '' && !elementsLlista.includes(nouElement)) {
+        elementsLlista.push(nouElement);
+        actualitzarLlista();
+        itemInput.value = ''; // Buidar l'input després d'afegir
+    }
+}
+
+// Funció per ordenar la llista alfabèticament
+function ordenarLlista() {
+    elementsLlista.sort((a, b) => a.localeCompare(b));
+    actualitzarLlista();
+}
+
+// Event listener per afegir elements quan es fa clic al botó
+afegirBtn.addEventListener('click', afegirElement);
+
+// Event listener per afegir elements quan es prem "Enter"
+itemInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        afegirElement();
+    }
+});
+
+// Event listener per ordenar la llista
+ordenarBtn.addEventListener('click', ordenarLlista);
+
+*/
+//exercici 12.2
+// Referències als elements del DOM
+const itemInput = document.getElementById('itemInput');
+const seccioSelect = document.getElementById('seccioSelect');
+const afegirBtn = document.getElementById('afegirBtn');
+const ordenarBtn = document.getElementById('ordenarBtn');
+const llistesSupermercat = document.getElementById('llistesSupermercat');
+
+let elementsLlista = {
+    Verduleria: [],
+    Carnisseria: [],
+    Peixateria: [],
+    Fruiteria: [],
+    Begudes: []
+};
+
+// Funció per actualitzar les llistes de seccions al DOM
+function actualitzarLlistes() {
+    llistesSupermercat.innerHTML = '';  // Esborrar llistes anteriors
+    for (const seccio in elementsLlista) {
+      if (elementsLlista[seccio].length > 0) {
+          // Crear un bloc per a cada secció amb els seus elements
+          const seccioDiv = document.createElement('div');
+          seccioDiv.classList.add('seccio');
+
+          const seccioTitle = document.createElement('h2');
+          seccioTitle.textContent = seccio;
+          seccioDiv.appendChild(seccioTitle);
+
+          const ul = document.createElement('ul');
+          elementsLlista[seccio].forEach((element) => {
+              const li = document.createElement('li');
+              li.textContent = element;
+
+              // Crear botó per esborrar
+              const esborrarBtn = document.createElement('button');
+              esborrarBtn.textContent = 'Esborrar';
+              esborrarBtn.classList.add('esborrar');
+                        
+                        // Event listener per esborrar l'element
+                        esborrarBtn.addEventListener('click', () => {
+                            elementsLlista[seccio] = elementsLlista[seccio].filter(el => el !== element);
+                            actualitzarLlistes();
+                        });
+
+                        // Afegir el botó a l'element de la llista
+                        li.appendChild(esborrarBtn);
+
+                        // Afegir l'element a la llista visual
+                        ul.appendChild(li);
+                    });
+ // Afegir la llista a la secció
+ seccioDiv.appendChild(ul);
+ llistesSupermercat.appendChild(seccioDiv);
+}
+}
+}
+
+// Funció per afegir un nou element a la llista
+function afegirElement() {
+const nouElement = itemInput.value.trim();
+const seccio = seccioSelect.value;
+
+if (nouElement !== '' && !elementsLlista[seccio].includes(nouElement)) {
+elementsLlista[seccio].push(nouElement);
+actualitzarLlistes();
+itemInput.value = '';  // Buidar l'input després d'afegir
+}
+}
+// Funció per ordenar les llistes dins de cada secció
+function ordenarLlista() {
+  for (const seccio in elementsLlista) {
+      elementsLlista[seccio].sort((a, b) => a.localeCompare(b));
+  }
+  actualitzarLlistes();
+}
+// Event listener per afegir elements quan es fa clic al botó
+afegirBtn.addEventListener('click', afegirElement);
+
+// Event listener per afegir elements quan es prem "Enter"
+itemInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        afegirElement();
+    }
+});
+
+// Event listener per ordenar les llistes
+ordenarBtn.addEventListener('click', ordenarLlista);
 
 

@@ -60,6 +60,86 @@
         }
         .botons button.equals:hover {
             background-color: #218838;
+        } 
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .esborrar {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .esborrar:hover {
+            background-color: #c82333;
+        }
+        .ordenar {
+            background-color: #007bff;
+        }
+
+        .ordenar:hover {
+            background-color: #0056b3;
+        }
+
+        .seccio {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .seccio h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
         }
     </style>
 </head>
@@ -219,17 +299,81 @@
       <button>4</button>
       <button>5</button>
       <button>6</button>
+      
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>0</button>
       <button class="equals" id="igual">=</button>
+  </div>
+</div>
 
+<!-- exercici 11.1 -->
+<div class="calculadora">
+  <input type="text" id="pantalla" class="pantalla" disabled>
+
+  <div class="botons">
+      <button class="borrar" id="borrar">C</button>
+      <button class="operacio" id="divisio">÷</button>
+      <button class="operacio" id="multiplicacio">×</button>
+      <button class="operacio" id="resta">-</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operacio" id="suma">+</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="equals" id="igual">=</button>
       <button>1</button>
       <button>2</button>
       <button>3</button>
 
       <button>0</button>
+      <button class="shift" id="shift">Shift</button>
+
+      <!-- Botons de funcions avançades (ocults per defecte) -->
+      <button class="secondary" id="sqrt">√</button>
+      <button class="secondary" id="pow">^</button>
   </div>
 </div>
 
+<!-- exercici 12 -->
+<div class="container">
+  <h1>Llista de la Compra</h1>
+  <input type="text" id="itemInput" placeholder="Afegeix un element..." />
+  <button id="afegirBtn">Afegir</button>
 
+  <ul id="llistaCompra"></ul>
+</div>
+
+<!-- exercici 12.1 -->
+<div class="container">
+  <h1>Llista de la Compra Guai</h1>
+  <input type="text" id="itemInput" placeholder="Afegeix un element..." />
+  <button id="afegirBtn">Afegir</button>
+  <button class="ordenar" id="ordenarBtn">Ordenar Alfabèticament</button>
+  <ul id="llistaCompra"></ul>
+</div>
+
+<!-- exercici 12.2 -->
+<div class="container">
+  <h1>Llista de la Compra Super Guai</h1>
+  <input type="text" id="itemInput" placeholder="Afegeix un element..." />
+  <select id="seccioSelect">
+      <option value="Verduleria">Verduleria</option>
+      <option value="Carnisseria">Carnisseria</option>
+      <option value="Peixateria">Peixateria</option>
+      <option value="Fruiteria">Fruiteria</option>
+      <option value="Begudes">Begudes</option>
+  </select>
+  <button id="afegirBtn">Afegir</button>
+  <button class="ordenar" id="ordenarBtn">Ordenar Alfabèticament</button>
+
+  <div id="llistesSupermercat"></div>
+</div>
 
   <script src="dom-exercicis.js"></script>
 </body>
