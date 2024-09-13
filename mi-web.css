@@ -6,7 +6,7 @@ body {
 
 /* Barra de navegació */
 .navbar {
-  background-color: #333;
+  background-color: #291818;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,7 +87,7 @@ body {
 /* Стиль для aside на лівій стороні */
 aside {
   width: 25%;
-  background-color: #333;
+  background-color: #252424;
   color: white;
   padding: 20px;
 }
@@ -115,4 +115,10 @@ aside {
 }
 .section:nth-child(3) {
   background-color: #d9d9d9;
+}
+footer {
+  background-color: #585252;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
