@@ -1,0 +1,118 @@
+/* Estils generals */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Barra de navegació */
+.navbar {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  color: white;
+}
+
+/* Logotip */
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Menu de navegació */
+.navbar .nav-links {
+  list-style-type: none;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botó del dropdown */
+.dropdown .dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown contingut (inicialment ocult) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+/* Estil dels enllaços dins del dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover sobre els enllaços del dropdown */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostrar el dropdown en passar el ratolí */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hover sobre el botó del dropdown */
+.dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Основний контейнер для сторінки */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Стиль для aside на лівій стороні */
+aside {
+  width: 25%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+/* Стиль для основної частини праворуч */
+.main-content {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Три секції праворуч */
+.section {
+  flex: 1;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Додаємо різні кольори для секцій */
+.section:nth-child(1) {
+  background-color: #f9f9f9;
+}
+.section:nth-child(2) {
+  background-color: #e9e9e9;
+}
+.section:nth-child(3) {
+  background-color: #d9d9d9;
+}

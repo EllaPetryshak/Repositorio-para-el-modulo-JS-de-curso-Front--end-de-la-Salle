@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="mi-web.css">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <title>Mi web</title>
 </head>
 <body>
-  
-    <div class="navbar">
-      <a href="#" class="logo"><img src="https://via.placeholder.com/100x40?text=Logo" alt="Logotipo"></a>
-      <a href="#home">Inicio</a>
-      <a href="#services">Servicios</a>
-      <div class="dropdown">
-          <button class="dropbtn">Más 
-              <i class="arrow down"></i>
-          </button>
-          <div class="dropdown-content">
-              <a href="#about">Acerca de</a>
-              <a href="#contact">Contacto</a>
-              <a href="#support">Soporte</a>
-          </div>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://via.placeholder.com/50" alt="Logo" style="vertical-align: middle;">
+        La meva web
+    </div>
+
+    <!-- Dropdown menú a la dreta -->
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="#">Enllaç 1</a>
+            <a href="#">Enllaç 2</a>
+            <a href="#">Enllaç 3</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <!-- Блок aside (ліва частина сторінки) -->
+  <aside>
+      <h2>Aside</h2>
+      <p>Bloc esquierre</p>
+      <ul>
+          <li>link 1</li>
+          <li>link 2</li>
+          <li>link 3</li>
+      </ul>
+  </aside>
+
+  <!-- Основний вміст з трьома секціями праворуч -->
+  <div class="main-content">
+      <div class="section">
+          <h2>Section 1</h2>
+          <p>Primera</p>
       </div>
-  
-  </nav>
+      <div class="section">
+          <h2>Section 2</h2>
+          <p>Segunda</p>
+      </div>
+      <div class="section">
+          <h2>Section 3 3</h2>
+          <p>Tercera</p>
+      </div>
+  </div>
+</div>
 </body>
 </html>
