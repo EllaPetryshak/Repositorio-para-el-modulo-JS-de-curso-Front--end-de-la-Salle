@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"], select {
+        width: 80%;
+        padding: 10px;
+        font-size: 1.2em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    .output {
+        margin-top: 20px;
+        font-size: 1.4em;
+        color: #333;
+    }
+</style>
+</head>
+<!-- exercici 13 -->
+  <div class="container">
+    <h1>Selector de Propietats d'una Caixa</h1>
+    <input type="text" id="nomInput" placeholder="Introdueix el teu nom" />
+    <select id="materialSelect">
+        <option value="cartón">Cartón</option>
+        <option value="plástico">Plástico</option>
+        <option value="madera">Madera</option>
+    </select>
+    <select id="tamañoSelect">
+        <option value="pequeño">Pequeño</option>
+        <option value="mediano">Mediano</option>
+        <option value="grande">Grande</option>
+    </select>
+    <input type="text" id="missatgeInput" placeholder="Introdueix un missatge personalitzat (opcional)" />
+    <button id="generarBtn">Generar Missatge</button>
+
+    <div class="output" id="outputText"></div>
+</div>
+<!-- exercici 14 -->
+ 
+<script src="dom-exercicis-13-16.js"></script>
+</body>
+</html>
