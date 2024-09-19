@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Presentació Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .section:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #eaffea;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carta de Presentació Interactiva</h1>
+
+    <div class="section">
+        <div class="title">Nom i Cognoms</div>
+        <p>Ella Petryshak</p>
+    </div>
+
+    <div class="section">
+        <div class="title">Posició</div>
+        <p>Front-end developer</p>
+    </div>
+
+    <div class="section">
+        <div class="title">Motivació</div>
+        <p>Sóc apassionat per la programació i m'encanta resoldre problemes complexos amb solucions simples.</p>
+    </div>
+
+    <div class="section">
+        <div class="title">Experiència</div>
+        <p>No tinc experiència en el desenvolupament de software i en la gestió d'equips tècnics.</p>
+    </div>
+
+    <button id="generate">Generar Carta</button>
+
+    <div id="result">
+        <p><strong>Carta de Presentació:</strong></p>
+        <p id="presentation"></p>
+    </div>
+</div>
+
+<script src="ex14-DOM.js"></script>
+</body>
+</html>
