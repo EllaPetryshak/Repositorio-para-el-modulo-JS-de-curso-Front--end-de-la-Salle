@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtre de Colors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .filter-buttons {
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #ccc;
+        }
+
+        .box-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            display: none; /* Inicialment ocultem tots els elements */
+        }
+
+        .show {
+            display: block; /* Només els elements amb la classe 'show' es mostraran */
+        }
+
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; }
+        .red { background-color: red; }
+    </style>
+</head>
+<body>
+
+<h1>Filtre de Colors</h1>
+
+<div class="filter-buttons">
+    <button onclick="filterSelection('all')">Mostrar Tot</button>
+    <button onclick="filterSelection('none')">Mostrar Cap</button>
+    <button onclick="filterSelection('blue')">Blau</button>
+    <button onclick="filterSelection('green')">Verd</button>
+    <button onclick="filterSelection('yellow')">Groc</button>
+    <button onclick="filterSelection('red')">Vermell</button>
+</div>
+
+<div class="box-container">
+    <div class="box blue"></div>
+    <div class="box green"></div>
+    <div class="box yellow"></div>
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+    <div class="box yellow"></div>
+    <div class="box red"></div>
+</div>
+
+<script src="ex15-DOM.js"></script>
+</body>
+</html>
