@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Caixa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Pedido de Caja</h1>
+
+    <div class="input-group">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" placeholder="Escribe tu nombre">
+    </div>
+
+    <div class="input-group">
+        <label for="material">Material de la caja:</label>
+        <select id="material">
+            <option value="cartón">Cartón</option>
+            <option value="plástico">Plástico</option>
+            <option value="madera">Madera</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="size">Tamaño de la caja:</label>
+        <select id="size">
+            <option value="pequeño">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="message">Mensaje en la caja:</label>
+        <input type="text" id="message" placeholder="Escribe tu mensaje">
+    </div>
+
+    <button onclick="generarMensaje()">Hacer Pedido</button>
+
+    <div id="result"></div>
+</div>
+<script src="ex-13-DOM.js"></script>
+</body>
+</html>
