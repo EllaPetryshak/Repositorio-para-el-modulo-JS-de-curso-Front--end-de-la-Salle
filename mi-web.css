@@ -35,7 +35,7 @@ body {
 .dropdown .dropbtn {
   background-color: #333;
   color: white;
-  padding: 10px;
+  padding: 20px;
   font-size: 1em;
   border: none;
   cursor: pointer;
@@ -86,7 +86,7 @@ body {
 
 /* Стиль для aside на лівій стороні */
 aside {
-  width: 25%;
+  width: 20%;
   background-color: #252424;
   color: white;
   padding: 20px;
@@ -94,7 +94,7 @@ aside {
 
 /* Стиль для основної частини праворуч */
 .main-content {
-  width: 75%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -116,6 +116,105 @@ aside {
 .section:nth-child(3) {
   background-color: #d9d9d9;
 }
+
+.right-sidebar {
+  width: 20%;
+  background-color: #f7f3f3;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+}
+.language-selector {
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.language-option {
+  text-decoration: none;
+  color: rgb(143, 131, 131);
+  padding: 0 5px;
+}
+
+.language-option:hover {
+  color: rgb(77, 76, 76);
+}
+
+.icon-container {
+  position: fixed; /* Per fixar les icones a la pantalla */
+  bottom: 10px; /* Distància des de la part inferior de la pàgina */
+  right: 10px; /* Distància des de la dreta de la pàgina */
+  font-size: 24px; /* Mida de les icones */
+}
+
+.icon-container i {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.icon-container i:hover {
+  color: gray; /* Canvia el color quan passes el cursor per sobre */
+}
+/* Estil del post */
+.post {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Contenidor de les targetes, utilitzant Flexbox */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Estil de cada targeta */
+.card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(33% - 20px);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s; /* Animació suau en passar el cursor */
+}
+
+/* Canvia l'escala de la targeta quan el cursor passa per sobre */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Estil de la imatge dins de la targeta */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Títol de la targeta */
+.card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Descripció de la targeta */
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Estil per a l'enllaç, per eliminar subratllat i estilitzar-lo com una targeta */
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 footer {
   background-color: #585252;
   color: white;
