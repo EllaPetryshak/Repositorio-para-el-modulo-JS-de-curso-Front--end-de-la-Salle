@@ -1,10 +1,8 @@
-/* Estils generals */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Barra de navegació */
 .navbar {
   background-color: #291818;
   display: flex;
@@ -14,34 +12,31 @@ body {
   color: white;
 }
 
-/* Logotip */
 .navbar .logo {
   font-size: 1.5em;
   font-weight: bold;
+  border-radius: 5px;
 }
 
-/* Menu de navegació */
 .navbar .nav-links {
   list-style-type: none;
 }
 
-/* Dropdown container */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Botó del dropdown */
 .dropdown .dropbtn {
-  background-color: #333;
+  background-color: #948a8a;
   color: white;
   padding: 20px;
   font-size: 1em;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-/* Dropdown contingut (inicialment ocult) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -51,7 +46,7 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-/* Estil dels enllaços dins del dropdown */
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -59,17 +54,14 @@ body {
   display: block;
 }
 
-/* Hover sobre els enllaços del dropdown */
 .dropdown-content a:hover {
   background-color: #ddd;
 }
 
-/* Mostrar el dropdown en passar el ratolí */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Hover sobre el botó del dropdown */
 .dropdown:hover .dropbtn {
   background-color: #555;
 }
@@ -78,13 +70,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Основний контейнер для сторінки */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* Стиль для aside на лівій стороні */
 aside {
   width: 20%;
   background-color: #252424;
@@ -92,21 +82,18 @@ aside {
   padding: 20px;
 }
 
-/* Стиль для основної частини праворуч */
 .main-content {
   width: 60%;
   display: flex;
   flex-direction: column;
 }
 
-/* Три секції праворуч */
 .section {
   flex: 1;
   padding: 20px;
   border-bottom: 1px solid #ddd;
 }
 
-/* Додаємо різні кольори для секцій */
 .section:nth-child(1) {
   background-color: #f9f9f9;
 }
@@ -140,20 +127,43 @@ aside {
   color: rgb(77, 76, 76);
 }
 
-.icon-container {
-  position: fixed; /* Per fixar les icones a la pantalla */
-  bottom: 10px; /* Distància des de la part inferior de la pàgina */
-  right: 10px; /* Distància des de la dreta de la pàgina */
-  font-size: 24px; /* Mida de les icones */
+ /* Contenidor per als botons de sol i lluna */
+ .theme-toggle-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
-.icon-container i {
-  margin: 0 10px;
+/* Estil per als botons */
+.theme-toggle-btn {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.icon-container i:hover {
-  color: gray; /* Canvia el color quan passes el cursor per sobre */
+/* Canvia el color de fons quan es passa el cursor per sobre */
+.theme-toggle-btn:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+/* Estils específics per al tema clar i fosc */
+body.light-theme {
+  background-color: rgb(163, 159, 159);
+  color: rgb(44, 40, 40);
+}
+
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: rgb(48, 47, 47);
 }
 /* Estil del post */
 .post {
@@ -161,7 +171,6 @@ aside {
   padding: 20px;
   margin-bottom: 20px;
 }
-
 
 /* Contenidor de les targetes, utilitzant Flexbox */
 .card-container {
@@ -200,6 +209,7 @@ aside {
   margin-top: 15px;
   font-size: 18px;
   color: #333;
+  text-decoration: none;
 }
 
 /* Descripció de la targeta */
@@ -207,6 +217,7 @@ aside {
   font-size: 14px;
   color: #666;
   margin-top: 10px;
+  text-decoration: none;
 }
 
 /* Estil per a l'enllaç, per eliminar subratllat i estilitzar-lo com una targeta */
