@@ -61,13 +61,13 @@ theme.addEventListener("click", () => {
 // Funció que canvia el tema
 function setTheme(newTheme) {
   if (newTheme == "dark") {
-      document.querySelector("link[rel='stylesheet']").href = "../styles/dark.css"
+      document.querySelector("link[rel='stylesheet']").href = "dark.css"
       theme.innerText = "🌞"
       console.log("holaaaaa");
       
       localStorage.setItem("theme", "dark")
   } else {
-      document.querySelector("link[rel='stylesheet']").href = "../styles/light.css"
+      document.querySelector("link[rel='stylesheet']").href = "light.css"
       theme.innerText = "🌚"
       localStorage.setItem("theme", "light")
   }
