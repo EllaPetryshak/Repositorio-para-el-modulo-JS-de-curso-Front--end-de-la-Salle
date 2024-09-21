@@ -1,4 +1,4 @@
-// Referències als botons i al cos del document
+/// Referències als botons i al cos del document
 const lightThemeBtn = document.getElementById('lightThemeBtn');
 const darkThemeBtn = document.getElementById('darkThemeBtn');
 const body = document.body;
